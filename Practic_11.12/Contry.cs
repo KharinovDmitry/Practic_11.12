@@ -20,6 +20,19 @@ namespace Practic_11._12
             Continent = continent;
         }
 
+        public static Contry[] GetContriesByLetter(Contry[] contries, char letter)
+        {
+            List<Contry> res = new List<Contry>();
+            foreach (var contry in contries)
+            {
+                if(contry.Name.StartsWith(letter.ToString()))
+                {
+                    res.Add(contry);
+                }
+            }
+            return res.ToArray();
+        }
+
         public static Contry[] SortByPoplation(Contry[] input)
         {  
             Array.Sort(input, new ContryComparer());
