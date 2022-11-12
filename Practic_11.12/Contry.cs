@@ -20,12 +20,38 @@ namespace Practic_11._12
             Continent = continent;
         }
 
+        public static Contry[] SelectByContinent(Contry[] contries, string continent)
+        {
+            List<Contry> res = new List<Contry>();
+            foreach (var contry in contries)
+            {
+                if (contry.Continent == continent)
+                {
+                    res.Add(contry);
+                }
+            }
+            return res.ToArray();
+        }
+
+        public static Contry[] SelectByRemoveContinent(Contry[] contries, string continent)
+        {
+            List<Contry> res = new List<Contry>();
+            foreach (var contry in contries)
+            {
+                if (contry.Continent != continent)
+                {
+                    res.Add(contry);
+                }
+            }
+            return res.ToArray();
+        }
+
         public static Contry[] GetContriesByLetter(Contry[] contries, char letter)
         {
             List<Contry> res = new List<Contry>();
             foreach (var contry in contries)
             {
-                if(contry.Name.StartsWith(letter.ToString()))
+                if(contry.Capital.StartsWith(letter.ToString()))
                 {
                     res.Add(contry);
                 }

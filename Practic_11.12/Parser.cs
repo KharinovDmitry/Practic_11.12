@@ -6,9 +6,9 @@
         {
             string[] input = File.ReadAllLines(path);
             Contry[] result = new Contry[input.Length - 1];
-            for(int i = 1; i < input.Length; i++)
+            for(int i = 0; i < input.Length - 1; i++)
             {
-                string[] data = input[i].Split(";");
+                string[] data = input[i + 1].Split(";");
 
                 string name = data[0];
                 string capital = data[1];
