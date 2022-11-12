@@ -21,12 +21,16 @@ namespace Practic_11._12
         }
 
         public static Contry[] SortByPoplation(Contry[] input)
-        {
-            
+        {  
             Array.Sort(input, new ContryComparer());
             return input.ToArray();
         }
 
+        public static Contry[] SortByContryName(Contry[] input)
+        {
+            Array.Sort(input, new ContryNameComparer());
+            return input.ToArray();
+        }
     }
     class ContryComparer : IComparer
     {
@@ -35,6 +39,16 @@ namespace Practic_11._12
             var Contry1 = (Contry)inputContry1;
             var Contry2 = (Contry)inputContry2;
             return Contry1.Population.CompareTo(Contry2.Population);
+        }
+    }
+
+    class ContryNameComparer : IComparer
+    {
+        public int Compare(object inputContry1, object inputContry2)
+        {
+            var Contry1 = (Contry)inputContry1;
+            var Contry2 = (Contry)inputContry2;
+            return Contry1.Name.CompareTo(Contry2.Name);
         }
     }
 }
