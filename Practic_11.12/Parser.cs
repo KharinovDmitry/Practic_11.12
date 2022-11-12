@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Practic_11._12
 {
-    internal class Parser
+    internal static class Parser
     {
+        public static Contry[] Parse(string path)
+        {
+
+        }
     }
 }
